@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:test_flutter_app/WeatherScreen.dart';
+import 'dart:async';
+import 'LocationManager.dart';
 
 void main() {
   runApp(new MyApp());
@@ -9,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter Weather',
       theme: new ThemeData(
         // This is the theme of your application.
         //
@@ -21,7 +24,7 @@ class MyApp extends StatelessWidget {
         // counter didn't reset back to zero; the application is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: new MyHomePage(title: 'Flutter Demo Home Page'),
+      home: new MyHomePage(title: 'Flutter Weather'),
     );
   }
 }
@@ -91,13 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            new Text(
-              'You have pushed the button this many times:',
-            ),
-            new Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
-            ),
+            new WeatherScreen()
           ],
         ),
       ),
